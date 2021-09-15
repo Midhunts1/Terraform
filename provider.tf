@@ -1,5 +1,5 @@
 provider "google" {
     credentials = file("my_project.json")
-    project = "spartan-apricot-322906"
+    project = "my-project-devops2021"
     region = "asia-south1"
 }
