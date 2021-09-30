@@ -8,3 +8,8 @@ steps:
   args:
   - plan
   - -input=false
+- name: 'hashicorp/terraform:1.0.8'
+  args:
+  - apply
+  - -auto-approve
+  - -input=false
