@@ -1,7 +1,6 @@
 steps: 
 #step 1 init
 - name: 'hashicorp/terraform:1.0.8'
-args: ['init',
-'-backend-config=project=eur-devops']
-env:
-- "TF_VAR_project-name=eur-devops"
+  args:
+  - init
+  - -input=false
