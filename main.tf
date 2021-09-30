@@ -1,18 +1,16 @@
-resource "google_storage_bucket" "myterrabucket" {
-  name          = "myterrabucket01"
-  location      = "EU"
-  force_destroy = true
+resource "google_compute_instance" "vm_instance" {
+  name         = "test"
+  machine_type = var.machine_type
+  zone        = "us-central1-c"
 
-  uniform_bucket_level_access = true
-
-  website {
-    main_page_suffix = "index.html"
-    not_found_page   = "404.html"
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
   }
-  cors {
-    origin          = ["http://image-store.com"]
-    method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
-    response_header = ["*"]
-    max_age_seconds = 3600
+  network_interface {
+    network = "default"
+    access_config {
+    }
   }
 }
