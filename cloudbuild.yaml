@@ -4,3 +4,8 @@ steps:
   args:
   - init
   - -input=false
+- name: 'hashicorp/terraform:1.0.8'
+  args:
+  - plan
+  - -input=false
+  - -out=tfplan
