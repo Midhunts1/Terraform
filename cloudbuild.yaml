@@ -2,19 +2,18 @@ steps:
 #step 1 init
 - name: 'hashicorp/terraform:1.0.0'
 args: ['init',
-'-backend-config=project=potent-galaxy-321008',
-'-backend-config=bucketpotent-galaxy-321008-tfstate']
+'-backend-config=project=eur-devops']
 env:
-- "TF_VAR_project-name=potent-galaxy-321008"
+- "TF_VAR_project-name=eur-devops"
 
 #step 2 plan
 - name: 'hashicorp/terraform:1.0.0'
 args: ['plan']
 env:
-- "TF_VAR_project-name=potent-galaxy-321008"
+- "TF_VAR_project-name=eur-devops"
 
 #step 3 apply
 - name: 'hashicorp/terraform:1.0.0'
 args: ['apply', '-auto-approve']
 env:
-- "TF_VAR_project-name=potent-galaxy-321008"
+- "TF_VAR_project-name=eur-devops"
