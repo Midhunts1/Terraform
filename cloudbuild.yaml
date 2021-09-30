@@ -1,19 +1,7 @@
 steps: 
 #step 1 init
-- name: 'hashicorp/terraform:1.0.0'
+- name: 'hashicorp/terraform:1.0.8'
 args: ['init',
 '-backend-config=project=eur-devops']
-env:
-- "TF_VAR_project-name=eur-devops"
-
-#step 2 plan
-- name: 'hashicorp/terraform:1.0.0'
-args: ['plan']
-env:
-- "TF_VAR_project-name=eur-devops"
-
-#step 3 apply
-- name: 'hashicorp/terraform:1.0.0'
-args: ['apply', '-auto-approve']
 env:
 - "TF_VAR_project-name=eur-devops"
